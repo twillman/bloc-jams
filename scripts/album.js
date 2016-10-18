@@ -30,6 +30,20 @@
      ]
  };
 
+ var albumTara = {
+     title: 'The Bulldog',
+     artist: 'Tara Willman',
+     label: 'TW',
+     year: '1989',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'Song 1', duration: '1:01' },
+         { title: 'Song 2', duration: '5:01' },
+         { title: 'Song 3', duration: '3:21'},
+         { title: 'Song 4', duration: '3:14' },
+         { title: 'Song 5', duration: '2:15'}
+     ]
+ };
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -66,5 +80,14 @@
 };
 
 window.onload = function() {
+    var currentAlbumIndex = 0
     setCurrentAlbum(albumPicasso);
+    var albumImage = document.getElementsByClassName('album-cover-art')[0];
+    var arrayOfAlbums = [albumPicasso, albumMarconi, albumTara]
+
+
+    albumImage.addEventListener("click", function(){
+      currentAlbumIndex++
+      setCurrentAlbum(arrayOfAlbums[currentAlbumIndex%3]);
+    })
 };
