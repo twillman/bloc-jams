@@ -1,5 +1,5 @@
-body.album-name{
-  background-image:url(../assets/images/blurred_backgrounds/blur_bg_3.jpg);
+body.album{
+  background-image:url("../assets/images/blurred_backgrounds/blur_bg_3.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center center;
